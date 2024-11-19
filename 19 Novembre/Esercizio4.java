@@ -65,7 +65,6 @@ public class Esercizio4 {
                             risultato.add(a);
                         }
                     }
-
                     //Stampo l'array dei risultati
                     System.out.println(risultato.toString());
                     break;
