@@ -15,37 +15,58 @@ public class Esercizio4 {
             Scanner numero = new Scanner(System.in);
             Scanner stringa = new Scanner(System.in);
             switch (scelta){
+
                 case 1:
                     int riga;
                     int colonna;
                     String nome;
                     boolean cond2 = true;
+
+                    //Chiedo riga, colonna e nome in input
                     System.out.println("Ci sono 3 righe e 8 colonne.\nInserisci numero della riga: ");
                     riga = numero.nextInt();
+
+                    //Verifico che la riga sia valida
                     if (riga < 1 || riga > 3){
                         System.out.println("Riga non valida!");
                         break;
                     }
                     System.out.println("Inserisci numero colonna: ");
                     colonna = numero.nextInt();
+
+                    //Verifico che la colonna sia valida
                     if (colonna < 1 || colonna > 8){
                         System.out.println("Colonna non valida!");
                         break;
                     }
-                    System.out.println("Inserisci un nome: ");
-                    nome = stringa.nextLine();
-                    posti[riga-1][colonna-1] = false;
-                    prenotazione.add(nome + riga + colonna);
+
+                    if (posti[riga-1][colonna-1] == false){
+                        System.out.println("Il posto inserito e' già occupato!");
+                    } else {
+                        //Inserire nome
+                        System.out.println("Inserisci un nome: ");
+                        nome = stringa.nextLine();
+
+                        //Segno il posto come occupato
+                        posti[riga-1][colonna-1] = false;
+                        String tmpprenot = nome + " " + riga + " " + colonna;
+                        prenotazione.add(tmpprenot);    
+                    }
                     break;
                 case 2:
+                    
                     ArrayList<String> risultato = new ArrayList<String>();
                     System.out.println("Inserisci il nome per verificare le prenotazioni: ");
                     String ricerca = stringa.nextLine();
+
+                    //Cerco all'interno dell'arraylist prenotazione una prenotazione che contenga il nome inserito
                     for (String a:prenotazione){
                         if (a.toLowerCase().contains(ricerca.toLowerCase())) {
                             risultato.add(a);
                         }
                     }
+
+                    //Stampo l'array dei risultati
                     System.out.println(risultato.toString());
                     break;
                 case 3:
@@ -67,14 +88,15 @@ public class Esercizio4 {
         }
         }
 
-
+        //Metodo che gestisce il meccanismo del menù
         public static int menu(){
             Scanner scelta = new Scanner(System.in);
-            System.out.println("Menù di selezione: \n 1 - Prenota un posto. \n 2 - Cerca una prenotazione \n 3 - Visualizza i prodotti liberi. \n 4 - Percentuale posti prenotati. \n 5 - Chiudi il programma.");
+            System.out.println("\nMenù di selezione: \n 1 - Prenota un posto. \n 2 - Cerca una prenotazione \n 3 - Visualizza i posti liberi e quelli prenotati. \n 4 - Percentuale posti prenotati. \n 5 - Chiudi il programma.");
             int tmp = scelta.nextInt();
             return tmp;
         }
 
+        //Metodo che inizializza la matrice dei posti.
         public static boolean[][] matriceposti(int righe, int colonne){
             boolean[][] posti = new boolean[righe][colonne];
             for (int i=0;i<posti.length;++i){
@@ -93,7 +115,8 @@ public class Esercizio4 {
                     if (posti[i][j] == true){
                         System.out.println("\nPosto disponibile\nRiga: " + i + "\nColonna: " + j);
                     } else {
-                        System.out.println("\nPosto OCCUPATO\nRiga: " + i + "\nColonna: " + j);
+                        System.out.println("\nPosto OCCUPATO\nRiga: " + i + "\nColonna: ");
+
                     }                   
                 }
             }
