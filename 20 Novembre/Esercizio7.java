@@ -5,6 +5,8 @@ import java.util.ArrayList;
 //[Pasta, Pane, Pomodori, Radicchio, Patate]
 public class Esercizio7 {
     public static void main(String[] args){
+
+
         ArrayList<String> listaing1 = new ArrayList();
         listaing1.add("Pane");
         listaing1.add("Pasta");
@@ -19,6 +21,7 @@ public class Esercizio7 {
 
 
     public static class Chef{
+        
         String nome;
         String tipo;
         ArrayList<String> ingredienti = new ArrayList();
