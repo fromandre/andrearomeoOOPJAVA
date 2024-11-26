@@ -13,7 +13,7 @@ public class Contatto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    @Column(name = "num_telefono") //Riprende il nome specifico dalla colonna così che possiamo dichiarare la variabile liberamente
+    @Column(name = "num_telefono", length = 100) //Riprende il nome specifico dalla colonna così che possiamo dichiarare la variabile liberamente
     private String numerotelefono;
 
 }
