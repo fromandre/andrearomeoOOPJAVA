@@ -35,4 +35,8 @@ public class ContattoServiceImpl implements ContattoService {
         return contattoRepository.findByNome(nome);
     }
 
+    @Override
+    public void delete(Long id){
+        contattoRepository.deleteById(id);
+    }
 }

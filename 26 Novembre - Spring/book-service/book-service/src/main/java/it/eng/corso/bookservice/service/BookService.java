@@ -6,8 +6,13 @@ import java.util.List;
 
 public interface BookService {
 
-    Book save(Book book);
+    BookDTO save(BookDTO book);
 
-    List<Book> findAll();
+    List<BookDTO> findAll();
+
+    BookDTO  findByUuid(String uuid);
+
+    void delete(String uuid);
+
 
 }

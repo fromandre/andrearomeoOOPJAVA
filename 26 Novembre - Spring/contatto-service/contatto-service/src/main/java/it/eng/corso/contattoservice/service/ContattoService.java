@@ -10,5 +10,5 @@ public interface ContattoService {
     List<Contatto> findAll();
     Optional<Contatto> findById(Long id);
     List<Contatto> findByNome(String nome);
-
+    void delete(Long id);
 }

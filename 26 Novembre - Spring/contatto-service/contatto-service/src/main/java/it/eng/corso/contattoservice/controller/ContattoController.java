@@ -8,29 +8,35 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api/v1/")
 public class ContattoController {
 
         @Autowired
         private ContattoService contattoService;
 
-        @GetMapping("/api/v1/contatti")
+        @GetMapping("/contatti")
         public List<Contatto> findAll(){
             return contattoService.findAll();
         }
 
-        @GetMapping("/api/v1/{id}")
+        @GetMapping("/{id}")
         public Optional<Contatto> findById(@PathVariable Long id){
                 return contattoService.findById(id);
         }
 
-        @GetMapping("/api/v1/search")
+        @GetMapping("/search")
         public List<Contatto> findByNome(@RequestParam String nome){
                 return contattoService.findByNome(nome);
         }
 
-        @PostMapping("/api/v1/contatti")
+        @PostMapping("/contatti")
         public Contatto save(@RequestBody Contatto c){
                 return contattoService.save(c);
         }
-        
+
+        @DeleteMapping("/delete/{id}")
+        public void delete(@PathVariable Long id){
+                contattoService.delete(id);
+        }
+
 }
