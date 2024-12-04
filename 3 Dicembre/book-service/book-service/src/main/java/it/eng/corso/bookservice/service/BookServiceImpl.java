@@ -1,9 +1,11 @@
 package it.eng.corso.bookservice.service;
 
 import it.eng.corso.bookservice.dto.BookDTO;
+import it.eng.corso.bookservice.exception.NoDataFoundException;
 import it.eng.corso.bookservice.model.Book;
 import it.eng.corso.bookservice.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@Profile("default")
 public class BookServiceImpl implements BookService {
     @Autowired
     private BookRepository bookRepository;
@@ -45,7 +48,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDTO findByUuid(String uuid) {
-        BookDTO ret = modelToDTO(bookRepository.findByUuid(uuid).orElseThrow());
+        BookDTO ret = modelToDTO(bookRepository.findByUuid(uuid).orElseThrow(NoDataFoundException::new));
 
         ret.setStars(
                 webClient.get()
@@ -60,7 +63,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void delete(String uuid) {
-        Book bookToDelete = bookRepository.findByUuid(uuid).orElseThrow();
+        Book bookToDelete = bookRepository.findByUuid(uuid).orElseThrow(NoDataFoundException::new);
         bookRepository.delete(bookToDelete);
     }
 

@@ -1,19 +1,15 @@
 package it.eng.corso.bookservice.controller;
 
 import it.eng.corso.bookservice.dto.BookDTO;
+import it.eng.corso.bookservice.groups.Step1;
+import it.eng.corso.bookservice.groups.Step2;
 import it.eng.corso.bookservice.service.BookService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +19,7 @@ import java.util.List;
 public class BookController {
 
     @Autowired
+    @Qualifier("primo")
     private BookService bookService;
 
     @GetMapping
@@ -41,7 +38,7 @@ public class BookController {
     }
 
     @PostMapping
-    public BookDTO save( @RequestBody BookDTO book ){
+    public BookDTO save( @RequestBody @Validated(Step2.class) BookDTO book ){
         return bookService.save( book );
     }
 
@@ -56,6 +53,7 @@ public class BookController {
     }
 
     @DeleteMapping("/{uuid}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete( @PathVariable String uuid ){
         bookService.delete( uuid );
     }
