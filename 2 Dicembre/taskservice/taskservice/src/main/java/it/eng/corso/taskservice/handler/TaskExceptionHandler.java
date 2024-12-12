@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 @ControllerAdvice
 public class TaskExceptionHandler {
-
+    
     @ExceptionHandler(NoDataFoundException.class)
     public ResponseEntity<Object> noDataFoundException(NoDataFoundException e){
         HashMap<String, Object> body = new HashMap<>();

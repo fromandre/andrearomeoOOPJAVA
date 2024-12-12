@@ -1,0 +1,15 @@
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\bin\Debug\net9.0\softwarehouse.exe
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\bin\Debug\net9.0\softwarehouse.deps.json
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\bin\Debug\net9.0\softwarehouse.runtimeconfig.json
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\bin\Debug\net9.0\softwarehouse.dll
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\bin\Debug\net9.0\softwarehouse.pdb
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.AssemblyInfoInputs.cache
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.AssemblyInfo.cs
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.csproj.CoreCompileInputs.cache
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.sourcelink.json
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.dll
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\refint\softwarehouse.dll
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.pdb
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\softwarehouse.genruntimeconfig.cache
+C:\Users\anromeo\Documents\GitHub\andrearomeoOOPJAVA\10 Dicembre\softwarehouse\obj\Debug\net9.0\ref\softwarehouse.dll
